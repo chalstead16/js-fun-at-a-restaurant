@@ -24,9 +24,39 @@ function addMenuItem(restaurantName, meal){
   }
 
 
+function removeMenuItem(restaurantName, food, mealType){
+
+  if (mealType === "breakfast"){
+
+    for (var i = 0; i < restaurantName.menus.breakfast.length; i++) {
+      if (restaurantName.menus.breakfast.splice(i, 1)){
+      return `No one is eating our ${food} - it has been removed from the ${mealType} menu!`
+      }
+    }
+  }
+
+  if (mealType === "lunch"){
+
+    for (var i = 0; i < restaurantName.menus.lunch.length; i++) {
+      if (restaurantName.menus.lunch.splice(i, 1)){
+        return `No one is eating our ${food} - it has been removed from the ${mealType} menu!`
+      }
+    }
+  }
+
+  if (mealType === "dinner"){
+
+    for (var i = 0; i < restaurantName.menus.dinner.length; i++) {
+      if (restaurantName.menus.dinner.splice(i,1)){
+        return `No one is eating our ${food} - it has been removed from the ${mealType} menu!`
+      }
+    }
+  }
+return `Sorry, we don't sell ${food}, try adding a new recipe!`
+}
 
 module.exports = {
   createRestaurant,
   addMenuItem,
-  // removeMenuItem
+  removeMenuItem
 }
